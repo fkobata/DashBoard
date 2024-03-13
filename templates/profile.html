@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../static//Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" type="image/png" href="../static/img/icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Kobata Code</title>
+</head>
+
+<body>
+    <aside id="header">
+        <section class="profile">
+            <img src="../static/img/avatar.png">
+            <h1>Kobata Code</h1>
+            <div class="social-links mt-4 text-center">
+                <a target="_blank" href="https://www.instagram.com/masterlightoficial?igsh=NjV4YmpjZXhzcnMz">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </section>
+        {% set menssagem = get_flashed_messages() %}
+        {% if menssagem %}
+        <div class="flash_alerta">
+            {{menssagem[0]}}
+        </div>
+        {% endif %}
+        <section class="autentic">
+            <div id="menu">
+                <nav id="navbar" class="nav-menu">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/profile">
+                                <i class="bi bi-house"></i> Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre"><i class="bi bi-person"></i> Configuration</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Habilidades"><i class="bi bi-list-check"></i> Habilidades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#curriculo"><i class="bi bi-file-earmark"></i> Curriculo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio"><i class="bi bi-collection"></i> Portfólio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato"><i class="bi bi-envelope"></i> Contatos</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </aside>
+    <main id="main">
+        <section id="Profile" class="row m-0 p-0">
+            <form action="/profileCad" method="POST">
+                <div class="PersonalData">
+                    <h4>Personal Data</h4>
+                    <div class="DataPersonal">
+                        <label for="Name">Name:</label>
+                        <input type="text" name="name" required placeholder="First Name">
+                        <label for="LastName">Last Name:</label>
+                        <input type="text" name="lastName" required placeholder="Last Name">
+                        <label for="mail">Mail:</label>
+                        <input type="email" name="mail" required placeholder="E-Mail Address">
+                        <label for="dataCad">Date:</label>
+                        <input type="date" name="datetimeCad"> <br><br>
+                        <label for="Document">Doc. number</label>
+                        <input type="number" name="docNum" required placeholder="Type Document ID">
+                    </div><br>
+                    <h4>Access:</h4>
+                    <div class="LoginDataPersonal">
+                        <label for="login">Username:</label>
+                        <input type="text" name="username" required placeholder="Username">
+                        <label for="senha">Password</label>
+                        <input type="password" name="txtsenha" required placeholder="Password">
+                    </div>
+                    <br>
+                    <h4>Address / Contact</h4>
+                    <div class="PersonalAddress">
+                        <label for="Country">Country:</label>
+                        <input type="text" name="Country" required placeholder="Country">
+                        <label for="States">State:</label>
+                        <input type="text" name="state" required placeholder="States">
+                        <label for="city">City:</label>
+                        <input type="text" name="city" placeholder="City"><br><br>
+                        <label for="cep">Postal Code:</label>
+                        <input type="text" name="CEP" placeholder="Postal Code number">
+                        <label for="Address">Address:</label>
+                        <input type="text" name="Adress" placeholder="Address">
+                        <label for="number">Number:</label>
+                        <input type="number" name="numberAdress" placeholder="Number Location">
+                        <br><br>
+                        <label for="Phone">Phone:</label>
+                        <input type="tel" name="phone" required placeholder="Phone Number">
+                    </div>
+                    <br>
+                    <div class="btn-profile">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Cancel</button>
+                    </div>
+                </div>
+                <br>
+                <div class="Lista">
+                    <ul class="list-group">
+                        <li class="list-group-item">{{ListUser}} <i class="bi bi-pencil-square"></i><i class="bi bi-trash"></i></li>
+                    </ul>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../static//Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" type="image/png" href="../static/img/icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Kobata Code</title>
+</head>
+
+<body>   
+    <aside id="header">
+        <section class="profile">
+            <img src="../static/img/Perfil_inicial.png">
+            <h1>Kobata Code</h1>
+            <div class="social-links mt-4 text-center">
+                <a target="_blank" href="https://www.instagram.com/masterlightoficial?igsh=NjV4YmpjZXhzcnMz">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </section>
+        {% set menssagem = get_flashed_messages() %}
+        {% if menssagem %}
+        <div class="flash_alerta">
+            {{menssagem[0]}}
+        </div>
+        {% endif %}
+        <section class="autentic">
+            <div id="logon">
+                <form action="/Home" method="POST">
+                    <h2>Autenticação:</h2>
+                    <label for="login">Username</label>
+                    <input type="text"  name="lgin" required placeholder="Type your Username"><br><br>
+                    <label for="password">Password</label>
+                    <input type="password" name="senha" placeholder="Type your Password"><br><br>
+                    <button class="btn btn-primary">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>Enter
+                    </button>
+                </form>
+            </div>
+        </section>
+    </aside>
+    <main id="main">
+        <section id="inicio" class="row m-0 p-0">
+          
+        </section>
+       
+    </main>
+</body>
+
+</html>
